@@ -13,6 +13,7 @@
 		3C46CD8029900D8E006A2919 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C46CD7F29900D8E006A2919 /* VideoPlayerViewController.swift */; };
 		3C46CD8229900DCC006A2919 /* NewChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C46CD8129900DCC006A2919 /* NewChatViewController.swift */; };
 		3C46CD8429900DD6006A2919 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C46CD8329900DD6006A2919 /* ProfileViewController.swift */; };
+		3C46CD872990185D006A2919 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C46CD862990185D006A2919 /* Extensions.swift */; };
 		3CF3C70929900A5B00F66335 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3C70829900A5B00F66335 /* AppDelegate.swift */; };
 		3CF3C70B29900A5B00F66335 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3C70A29900A5B00F66335 /* SceneDelegate.swift */; };
 		3CF3C70D29900A5B00F66335 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3C70C29900A5B00F66335 /* MessageViewController.swift */; };
@@ -28,6 +29,7 @@
 		3C46CD7F29900D8E006A2919 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		3C46CD8129900DCC006A2919 /* NewChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChatViewController.swift; sourceTree = "<group>"; };
 		3C46CD8329900DD6006A2919 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		3C46CD862990185D006A2919 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		3CF3C70529900A5B00F66335 /* KateChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KateChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF3C70829900A5B00F66335 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3CF3C70A29900A5B00F66335 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3C46CD852990111D006A2919 /* LOGIN */ = {
+			isa = PBXGroup;
+			children = (
+				3C46CD7929900D21006A2919 /* LoginViewController.swift */,
+				3C46CD7B29900D5F006A2919 /* RegisterViewController.swift */,
+			);
+			path = LOGIN;
+			sourceTree = "<group>";
+		};
 		3CF3C6FC29900A5B00F66335 = {
 			isa = PBXGroup;
 			children = (
@@ -84,8 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				3CF3C70C29900A5B00F66335 /* MessageViewController.swift */,
-				3C46CD7929900D21006A2919 /* LoginViewController.swift */,
-				3C46CD7B29900D5F006A2919 /* RegisterViewController.swift */,
+				3C46CD852990111D006A2919 /* LOGIN */,
 				3C46CD7D29900D83006A2919 /* PhotoViewerViewController.swift */,
 				3C46CD7F29900D8E006A2919 /* VideoPlayerViewController.swift */,
 				3C46CD8129900DCC006A2919 /* NewChatViewController.swift */,
@@ -120,6 +130,7 @@
 		3CF3C72029900BAD00F66335 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3C46CD862990185D006A2919 /* Extensions.swift */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -209,6 +220,7 @@
 				3C46CD7C29900D5F006A2919 /* RegisterViewController.swift in Sources */,
 				3CF3C70D29900A5B00F66335 /* MessageViewController.swift in Sources */,
 				3CF3C70929900A5B00F66335 /* AppDelegate.swift in Sources */,
+				3C46CD872990185D006A2919 /* Extensions.swift in Sources */,
 				3CF3C70B29900A5B00F66335 /* SceneDelegate.swift in Sources */,
 				3C46CD8429900DD6006A2919 /* ProfileViewController.swift in Sources */,
 				3C46CD7E29900D83006A2919 /* PhotoViewerViewController.swift in Sources */,
