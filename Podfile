@@ -7,4 +7,8 @@ target 'KateChat' do
 
   # Pods for KateChat
 
+pod 'Firebase/Core'
+pod 'Firebase/Auth'
+pod 'Firebase/Database'
+
 end

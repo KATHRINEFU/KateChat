@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
 
@@ -17,9 +18,12 @@ class RegisterViewController: UIViewController {
     
     private let imageView: UIImageView = {
         let iv = UIImageView()
-        iv.image = UIImage(systemName: "person")
+        iv.image = UIImage(systemName: "person.circle")
         iv.tintColor = .gray
         iv.contentMode = .scaleAspectFit
+        iv.layer.masksToBounds = true
+        iv.layer.borderWidth = 2
+        iv.layer.borderColor = UIColor.purple.cgColor
         return iv
     }()
     
@@ -106,7 +110,7 @@ class RegisterViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Register", style: .done, target: self, action: #selector(didTapRegister))
         navigationItem.rightBarButtonItem?.tintColor = .purple
         
-        registerBtn.addTarget(self, action: #selector(loginBtnTapped), for:  .touchUpInside)
+        registerBtn.addTarget(self, action: #selector(registerBtnTapped), for:  .touchUpInside)
         
         emailField.delegate = self
         emailField.delegate = self
@@ -128,7 +132,8 @@ class RegisterViewController: UIViewController {
     }
     
     @objc private func didTapChangeProfilePicture(){
-        print("did tap picture called")
+        presentPhotoActionSheet()
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -136,6 +141,7 @@ class RegisterViewController: UIViewController {
         scrollView.frame = view.bounds
         let size = scrollView.width/3
         imageView.frame = CGRect(x: (scrollView.width-size)/2, y: 20, width: size, height: size)
+        imageView.layer.cornerRadius = imageView.width/2.0
         firstNameField.frame = CGRect(x: 30, y: imageView.bottom+10, width: scrollView.width-60, height: 52)
         lastNameField.frame = CGRect(x: 30, y: firstNameField.bottom+10, width: scrollView.width-60, height: 52)
         emailField.frame = CGRect(x: 30, y: lastNameField.bottom+10, width: scrollView.width-60, height: 52)
@@ -143,7 +149,7 @@ class RegisterViewController: UIViewController {
         registerBtn.frame = CGRect(x: 30, y: passwordField.bottom+10, width: scrollView.width-60, height: 52)
     }
     
-    @objc private func loginBtnTapped(){
+    @objc private func registerBtnTapped(){
         emailField.resignFirstResponder()
         passwordField.resignFirstResponder()
         firstNameField.resignFirstResponder()
@@ -155,10 +161,35 @@ class RegisterViewController: UIViewController {
         }
         
         //Firebase register
+        
+        DatabaseManager.shared.userExists(with: email) { [weak self] exists in
+            guard let strongSelf = self else{
+                return
+            }
+            guard !exists else{
+                // user already exists
+                strongSelf.alertUserLoginError(message: "User email has been registered")
+                return
+            }
+            
+            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+                
+                guard authResult != nil, error == nil else{
+                    print("Error creating user")
+                    return
+                }
+                
+                
+                DatabaseManager.shared.insertUser(with: KateChatUser(firstName: firstName, lastName: lastName, email: email))
+                strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+            }
+            
+        }
+        
     }
     
-    func alertUserLoginError(){
-        let alert = UIAlertController(title: "Registration Error", message: "Please enter all information to register", preferredStyle: .alert)
+    func alertUserLoginError(message: String = "Please enter all information to register"){
+        let alert = UIAlertController(title: "Registration Error", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
         present(alert, animated: true)
         
@@ -178,8 +209,53 @@ extension RegisterViewController: UITextFieldDelegate{
         if textField == emailField{
             passwordField.becomeFirstResponder()
         }else if textField == passwordField{
-            loginBtnTapped()
+            registerBtnTapped()
         }
         return true
+    }
+}
+
+extension RegisterViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+    
+    func presentPhotoActionSheet(){
+        let actionSheet = UIAlertController(title: "Profile Picture", message: "How would you like to select a picture?", preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        actionSheet.addAction(UIAlertAction(title: "Take Photo", style: .default, handler: { [weak self] _ in
+            self?.presentCamera()
+        }))
+        actionSheet.addAction(UIAlertAction(title: "Choose from Album", style: .default, handler: { [weak self] _ in
+            self?.presentPhotoPicker()
+        }))
+        
+        present(actionSheet, animated: true)
+    }
+    
+    func presentCamera(){
+        let vc = UIImagePickerController()
+        vc.sourceType = .camera
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+    func presentPhotoPicker(){
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.delegate = self
+        vc.allowsEditing = true
+        present(vc, animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else{
+            return
+        }
+        self.imageView.image = selectedImage
     }
 }
