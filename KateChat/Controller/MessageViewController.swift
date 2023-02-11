@@ -33,6 +33,7 @@ class MessageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapComposeBtn))
         view.addSubview(tableView)
         view.addSubview(noConversationsLabel)
         setupTableView()
@@ -66,6 +67,12 @@ class MessageViewController: UIViewController {
     
     private func fetchConversations(){
         tableView.isHidden = false
+    }
+    
+    @objc private func didTapComposeBtn(){
+        let vc = NewChatViewController()
+        let navVC = UINavigationController(rootViewController: vc)
+        present(navVC, animated: true)
     }
 }
 
