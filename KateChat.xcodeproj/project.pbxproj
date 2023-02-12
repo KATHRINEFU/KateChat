@@ -14,9 +14,9 @@
 		3C46CD8229900DCC006A2919 /* NewChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C46CD8129900DCC006A2919 /* NewChatViewController.swift */; };
 		3C46CD8429900DD6006A2919 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C46CD8329900DD6006A2919 /* ProfileViewController.swift */; };
 		3C46CD872990185D006A2919 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C46CD862990185D006A2919 /* Extensions.swift */; };
-		3C46CD8929906304006A2919 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C46CD8829906304006A2919 /* GoogleService-Info.plist */; };
 		3C50986D29971C7B00BDDCAC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C50986C29971C7B00BDDCAC /* ChatViewController.swift */; };
 		3C50986F2997E5A800BDDCAC /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C50986E2997E5A800BDDCAC /* StorageManager.swift */; };
+		3C788E022999996C007E5786 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C788E012999996C007E5786 /* GoogleService-Info.plist */; };
 		3CDDB1A02992E42000E17A93 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDDB19F2992E42000E17A93 /* DatabaseManager.swift */; };
 		3CF3C70929900A5B00F66335 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3C70829900A5B00F66335 /* AppDelegate.swift */; };
 		3CF3C70B29900A5B00F66335 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3C70A29900A5B00F66335 /* SceneDelegate.swift */; };
@@ -36,9 +36,9 @@
 		3C46CD8129900DCC006A2919 /* NewChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChatViewController.swift; sourceTree = "<group>"; };
 		3C46CD8329900DD6006A2919 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		3C46CD862990185D006A2919 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		3C46CD8829906304006A2919 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3C50986C29971C7B00BDDCAC /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		3C50986E2997E5A800BDDCAC /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		3C788E012999996C007E5786 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3CDDB19F2992E42000E17A93 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		3CF3C70529900A5B00F66335 /* KateChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KateChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF3C70829900A5B00F66335 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +84,7 @@
 		3CF3C6FC29900A5B00F66335 = {
 			isa = PBXGroup;
 			children = (
+				3C788E012999996C007E5786 /* GoogleService-Info.plist */,
 				3CF3C70729900A5B00F66335 /* KateChat */,
 				3CF3C70629900A5B00F66335 /* Products */,
 				8FB70FA816B02EBEC499FF33 /* Pods */,
@@ -102,7 +103,6 @@
 		3CF3C70729900A5B00F66335 /* KateChat */ = {
 			isa = PBXGroup;
 			children = (
-				3C46CD8829906304006A2919 /* GoogleService-Info.plist */,
 				3CF3C72029900BAD00F66335 /* Resource */,
 				3CF3C71F29900B9F00F66335 /* ViewModel */,
 				3CF3C71E29900B9700F66335 /* Model */,
@@ -241,7 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CF3C71529900A5D00F66335 /* LaunchScreen.storyboard in Resources */,
-				3C46CD8929906304006A2919 /* GoogleService-Info.plist in Resources */,
+				3C788E022999996C007E5786 /* GoogleService-Info.plist in Resources */,
 				3CF3C71229900A5D00F66335 /* Assets.xcassets in Resources */,
 				3CF3C71029900A5B00F66335 /* Main.storyboard in Resources */,
 			);
