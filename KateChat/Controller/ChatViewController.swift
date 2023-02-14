@@ -119,7 +119,7 @@ extension ChatViewController: InputBarAccessoryViewDelegate{
         if isNewConversation{
             //create conversation in database
             let message = Message(sender: selfSender, messageId: messageId, sentDate: Date(), kind: .text(text))
-            DatabaseManager.shared.createNewConversation(with: otherUserEmail, firstMessage: message) { success in
+            DatabaseManager.shared.createNewConversation(with: otherUserEmail, name: self.title ?? "User", firstMessage: message) { success in
                 if success{
                     print("message sent")
                 }else{

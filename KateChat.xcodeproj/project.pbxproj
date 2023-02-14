@@ -17,6 +17,7 @@
 		3C50986D29971C7B00BDDCAC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C50986C29971C7B00BDDCAC /* ChatViewController.swift */; };
 		3C50986F2997E5A800BDDCAC /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C50986E2997E5A800BDDCAC /* StorageManager.swift */; };
 		3C788E022999996C007E5786 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3C788E012999996C007E5786 /* GoogleService-Info.plist */; };
+		3C788E04299B08DA007E5786 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C788E03299B08DA007E5786 /* ConversationTableViewCell.swift */; };
 		3CDDB1A02992E42000E17A93 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CDDB19F2992E42000E17A93 /* DatabaseManager.swift */; };
 		3CF3C70929900A5B00F66335 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3C70829900A5B00F66335 /* AppDelegate.swift */; };
 		3CF3C70B29900A5B00F66335 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CF3C70A29900A5B00F66335 /* SceneDelegate.swift */; };
@@ -39,6 +40,7 @@
 		3C50986C29971C7B00BDDCAC /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		3C50986E2997E5A800BDDCAC /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		3C788E012999996C007E5786 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3C788E03299B08DA007E5786 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 		3CDDB19F2992E42000E17A93 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		3CF3C70529900A5B00F66335 /* KateChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KateChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3CF3C70829900A5B00F66335 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 			children = (
 				3CF3C72129900BCF00F66335 /* Storyboard */,
 				3CF3C71129900A5D00F66335 /* Assets.xcassets */,
+				3C788E03299B08DA007E5786 /* ConversationTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				3CF3C70B29900A5B00F66335 /* SceneDelegate.swift in Sources */,
 				3C46CD8429900DD6006A2919 /* ProfileViewController.swift in Sources */,
 				3C46CD7E29900D83006A2919 /* PhotoViewerViewController.swift in Sources */,
+				3C788E04299B08DA007E5786 /* ConversationTableViewCell.swift in Sources */,
 				3C50986D29971C7B00BDDCAC /* ChatViewController.swift in Sources */,
 				3C46CD8229900DCC006A2919 /* NewChatViewController.swift in Sources */,
 				3C50986F2997E5A800BDDCAC /* StorageManager.swift in Sources */,
