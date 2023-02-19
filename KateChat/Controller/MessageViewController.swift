@@ -62,7 +62,7 @@ class MessageViewController: UIViewController {
             return
         }
         
-        print("starting conversation fetch")
+        print("starting conversation fetch for \(email)")
         let safeEmail = DatabaseManager.safeEmail(email: email)
         DatabaseManager.shared.getAllConversations(for: safeEmail) { [weak self] result in
             switch result{
