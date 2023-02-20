@@ -46,7 +46,9 @@ class MessageViewController: UIViewController {
         label.isHidden = true
         return label
     }()
-
+    
+    private var loginObserver : NSObjectProtocol?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(didTapComposeBtn))
@@ -55,6 +57,13 @@ class MessageViewController: UIViewController {
         setupTableView()
         fetchConversations()
         startListeningForConversations()
+        
+        loginObserver = NotificationCenter.default.addObserver(forName: .didLoginNotification, object: nil, queue: .main, using: { [weak self] _ in
+            guard let strongSelf = self else{
+                return
+            }
+            strongSelf.startListeningForConversations()
+        })
     }
     
     private func startListeningForConversations(){
